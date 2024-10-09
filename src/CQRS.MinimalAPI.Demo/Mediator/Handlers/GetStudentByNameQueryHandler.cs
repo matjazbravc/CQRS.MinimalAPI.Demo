@@ -5,17 +5,10 @@ using MediatR;
 
 namespace CQRS.MinimalAPI.Demo.Mediator.Handlers;
 
-public class GetStudentByNameQueryHandler : IRequestHandler<GetStudentByNameQuery, Student?>
+public class GetStudentByNameQueryHandler(IStudentsRepository studentsRepository) : IRequestHandler<GetStudentByNameQuery, Student?>
 {
-    private readonly IStudentsRepository _studentsRepository;
-
-    public GetStudentByNameQueryHandler(IStudentsRepository studentsRepository)
-    {
-        _studentsRepository = studentsRepository;
-    }
-
-    public async Task<Student?> Handle(GetStudentByNameQuery request, CancellationToken cancellationToken)
-    {
-        return await _studentsRepository.GetByNameAsync(request.Name, cancellationToken).ConfigureAwait(false);
-    }
+  public async Task<Student?> Handle(GetStudentByNameQuery request, CancellationToken cancellationToken)
+  {
+    return await studentsRepository.GetByNameAsync(request.Name, cancellationToken).ConfigureAwait(false);
+  }
 }

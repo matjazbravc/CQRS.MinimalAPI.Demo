@@ -4,17 +4,10 @@ using MediatR;
 
 namespace CQRS.MinimalAPI.Demo.Mediator.Handlers;
 
-public class DeleteStudentCommandHandler : IRequestHandler<DeleteStudentCommand, bool>
+public class DeleteStudentCommandHandler(IStudentsRepository studentsRepository) : IRequestHandler<DeleteStudentCommand, bool>
 {
-    private readonly IStudentsRepository _studentsRepository;
-
-    public DeleteStudentCommandHandler(IStudentsRepository studentsRepository)
-    {
-        _studentsRepository = studentsRepository;
-    }
-
-    public async Task<bool> Handle(DeleteStudentCommand request, CancellationToken cancellationToken)
-    {
-        return await _studentsRepository.RemoveAsync(request.Id, cancellationToken).ConfigureAwait(false);
-    }
+  public async Task<bool> Handle(DeleteStudentCommand request, CancellationToken cancellationToken)
+  {
+    return await studentsRepository.RemoveAsync(request.Id, cancellationToken).ConfigureAwait(false);
+  }
 }

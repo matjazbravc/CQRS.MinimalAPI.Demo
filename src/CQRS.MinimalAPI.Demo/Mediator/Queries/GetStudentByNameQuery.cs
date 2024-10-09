@@ -5,5 +5,5 @@ namespace CQRS.MinimalAPI.Demo.Mediator.Queries;
 
 public class GetStudentByNameQuery : IRequest<Student>
 {
-    public string Name { get; set; }
+  public string Name { get; set; }
 }

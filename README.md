@@ -37,15 +37,14 @@ At the end, we split the responsibility into **Command** and **Query**, and we u
 
 Enjoy!
 
-- [Visual Studio](https://www.visualstudio.com/vs/community) 2022 17.4.3 or greater
-- [.NET SDK 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
+- [Visual Studio](https://www.visualstudio.com/vs/community) 2022 17.2.6 or greater
+- [.NET SDK 8.0](https://dotnet.microsoft.com/download/dotnet/8.0)
 
 ## Tags & Technologies
-- [.NET 7.0](https://github.com/dotnet/core/blob/main/release-notes/7.0/7.0.3/7.0.3.md)
-- [ASP.NET Core 7.0](https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-7.0?view=aspnetcore-7.0)
+- [.NET 8](https://github.com/dotnet/core/blob/main/release-notes/8.0)
 - [SQLite](https://sqlite.org/index.html)
 - [MediatR](https://github.com/jbogard/MediatR)
-- [Entity Framework Core 7.x](https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-7.0/whatsnew)
+- [Entity Framework Core 8.x](https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-8.0/whatsnew)
 
 ## Licence
 Licenced under [MIT](http://opensource.org/licenses/mit-license.php).

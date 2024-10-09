@@ -5,18 +5,11 @@ using MediatR;
 
 namespace CQRS.MinimalAPI.Demo.Mediator.Handlers;
 
-public class CreateStudentCommandHandler : IRequestHandler<CreateStudentCommand, Student>
+public class CreateStudentCommandHandler(IStudentsRepository studentsRepository) : IRequestHandler<CreateStudentCommand, Student>
 {
-    private readonly IStudentsRepository _studentsRepository;
-
-    public CreateStudentCommandHandler(IStudentsRepository studentsRepository)
-    {
-        _studentsRepository = studentsRepository;
-    }
-
-    public async Task<Student> Handle(CreateStudentCommand request, CancellationToken cancellationToken)
-    {
-        var newStudent = new Student(request.Name, request.Address, request.Email, request.DateOfBirth);
-        return await _studentsRepository.AddAsync(newStudent, cancellationToken).ConfigureAwait(false);
-    }
+  public async Task<Student> Handle(CreateStudentCommand request, CancellationToken cancellationToken)
+  {
+    var newStudent = new Student(request.Name, request.Address, request.Email, request.DateOfBirth);
+    return await studentsRepository.AddAsync(newStudent, cancellationToken).ConfigureAwait(false);
+  }
 }
